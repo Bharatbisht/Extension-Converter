@@ -9,7 +9,8 @@ public class Convert {
 	private FileOutputStream fileoutput2;
 	private Scanner sc;
 	private static Scanner sc2;
-	public void copy(String d,String path){
+	
+    public void copy(String d,String path){
         try{
         	sc = new Scanner(System.in);
         	
@@ -20,16 +21,15 @@ public class Convert {
             fileoutput = new FileOutputStream(s2,true);
             int i;  
             do{
-               i=fileinput2.read();
-              if(i!=-1){
-                  fileoutput.write((char)i);
-                }
-               }while(i!=-1);
+                  i=fileinput2.read();
+                 if(i!=-1){
+                    fileoutput.write((char)i);
+                 }
+             }while(i!=-1);
 
-        } catch (Exception e) {
-           }
-    }
-  public void extension(String d,String path,String ext,String ext1){
+        } catch (Exception e) {}
+   }
+   public void extension(String d,String path,String ext,String ext1){
         //create
     try{
         String s4=path+"/"+d;
@@ -47,7 +47,7 @@ public class Convert {
              //  System.out.print(i);
                if(i!=-1){
                 fileoutput2.write((char)i);
-                }
+               }
            }while(i!=-1);
             System.out.println("Success");
       }catch(Exception e){}
@@ -57,9 +57,9 @@ public class Convert {
         File file1 = new File(s3);
         file1.delete();
         System.out.println("Success");
-    }
+     }
 	public static void main(String[] args) throws IOException{ 
-       Convert obj=new Convert();
+         Convert obj=new Convert();
           sc2 = new Scanner(System.in);
             System.out.println("Enter the path of folder=");
                String path=sc2.next();
@@ -74,9 +74,9 @@ public class Convert {
                                      //obj.copy(name,path);
                                        obj.extension(name,path,ext,ext1);  
                                      //obj.delete(name,path);
-                      
-                }           
-        }
+				}
+       	                      }                                   
+        
 	}
 
 }
